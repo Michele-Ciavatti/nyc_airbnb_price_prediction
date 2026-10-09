@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: NY_airbnb
+Version: 0.1.0
+Summary: Data processing pipeline
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file

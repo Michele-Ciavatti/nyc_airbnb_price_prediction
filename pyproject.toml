@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nyc-airbnb"
+version = "0.1.0"
+description = "NYC Airbnb price prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "kagglehub",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = ["ipykernel"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
