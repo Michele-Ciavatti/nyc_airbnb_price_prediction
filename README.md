@@ -2,6 +2,8 @@
 
 **Requirements:** Python 3.10+ (developed on 3.12) and a free Kaggle account.
 
+### Without `make`
+
 1. Clone the repository and enter the project folder:
 ```bash
    git clone https://github.com/Michele-Ciavatti/nyc_airbnb_price_prediction.git
@@ -34,3 +36,8 @@
    The dataset is saved in `data/` and is git-ignored.
 
 6. Open the desired notebook in `notebooks/` and run it top to bottom.
+
+### Shortcuts with `make`
+
+If you have `make` installed, just use `make setup`. Further 
+instructions (linting, formatting, tests, docs) can be seen wth `make help`.

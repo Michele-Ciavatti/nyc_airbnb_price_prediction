@@ -1,16 +1,12 @@
 .PHONY: help setup install lint test format clean docs-serve docs-build
 
 # Shell environment configuration
-SHELL := /bin/bash
 PYTHON := python
 PIP := pip
 MKDOCS := mkdocs
 
 help: ## Show this help message
-	@echo "Usage: make [target]"
-	@echo ""
-	@echo "Targets:"
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-R0-9_-]+:.*?## / {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@$(PYTHON) scripts/make_help.py
 
 setup: ## Install editable package and development dependencies
 	$(PIP) install -e ".[dev]"
@@ -18,21 +14,22 @@ setup: ## Install editable package and development dependencies
 install: ## Install core project dependencies only
 	$(PIP) install -e .
 
+data: ## Download the dataset from Kaggle
+	$(PYTHON) src/retrieve_data.py
+
 lint: ## Run code formatting checks and linting
 	ruff check src/ tests/
 	black --check src/ tests/
 
 format: ## Automatically format code using black and ruff
-	ruff check --fix src/ tests/
-	black src/ tests/
+	ruff check --fix src/ tests/ scripts/
+	black src/ tests/ scripts/
 
 test: ## Run unit tests with pytest
 	pytest --cov=src tests/
 
 clean: ## Remove bytecode, build artifacts, and MkDocs site
-	rm -rf build/ dist/ *.egg-info .pytest_cache .coverage htmlcov site/
-	find . -type d -name "__pycache__" -exec rm -rf {} +
-	find . -type f -name "*.pyc" -delete
+	$(PYTHON) scripts/clean.py
 
 docs-serve: ## Launch local MkDocs server with live-reloading on src/
 	$(MKDOCS) serve --watch src
