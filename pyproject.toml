@@ -6,6 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "nyc-airbnb"
 version = "0.1.0"
 description = "NYC Airbnb price prediction"
+authors = [
+  { name = "Michele Ciavatti", email = "micheleciavatti@outlook.it" },
+]
+license = { file = "LICENSE" }
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -19,7 +23,16 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["ipykernel"]
+dev = [
+    "ipykernel",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "ruff",
+    "black",
+    "pytest",
+    "pytest-cov",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]

@@ -1,0 +1,13 @@
+site_name: NYC Airbnb Data Pipeline
+site_description: Documentation for the Airbnb dataset analysis and processing pipeline.
+
+nav:
+  - Home: index.md
+  - API Reference: api.md
+
+theme: readthedocs
+
+plugins:
+  - search # Plugin that enables search in the documentation
+  - mkdocstrings: # This one makes the magic happen!
+      default_handler: python
