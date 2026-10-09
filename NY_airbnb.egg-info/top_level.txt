@@ -1,5 +1,0 @@
-classes
-data
-figures
-notebooks
-src
