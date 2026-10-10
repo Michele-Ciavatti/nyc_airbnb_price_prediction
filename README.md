@@ -48,10 +48,10 @@
 ```text
 nyc_airbnb_price_prediction/
 ├── data/  
-    ├── external
-    ├── interim
-    ├── processed
-    ├── raw  
+|   ├── external
+|   ├── interim
+|   ├── processed
+|   ├── raw  
 ├── docs/                    # MkDocs documentation sources
 │   ├── api.md  
 │   └── index.md  
