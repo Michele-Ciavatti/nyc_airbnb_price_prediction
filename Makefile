@@ -1,4 +1,4 @@
-.PHONY: help setup install lint test format clean docs-serve docs-build
+.PHONY: help setup install data lint test format clean docs-serve docs-build
 
 # Shell environment configuration
 PYTHON := python
@@ -10,6 +10,7 @@ help: ## Show this help message
 
 setup: ## Install editable package and development dependencies
 	$(PIP) install -e ".[dev]"
+	pre-commit install
 
 install: ## Install core project dependencies only
 	$(PIP) install -e .
@@ -18,12 +19,12 @@ data: ## Download the dataset from Kaggle
 	$(PYTHON) src/retrieve_data.py
 
 lint: ## Run code formatting checks and linting
-	ruff check src/ tests/
-	black --check src/ tests/
+	ruff check src/ tests/ scripts/
+	ruff format --check src/ tests/ scripts/
 
-format: ## Automatically format code using black and ruff
+format: ## Automatically format code using ruff
 	ruff check --fix src/ tests/ scripts/
-	black src/ tests/ scripts/
+	ruff format src/ tests/ scripts/
 
 test: ## Run unit tests with pytest
 	pytest --cov=src tests/

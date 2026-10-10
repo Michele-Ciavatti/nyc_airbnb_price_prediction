@@ -30,10 +30,15 @@
 
    - Edit `.env` and paste your token. This file is git-ignored and never committed.
 
-4. If you have `make` installed, just use `make setup` (see `make help` for other commands). Otherwise, install the project and its dependencies:
+4. Install the project and its dependencies:
 
 ```bash
+   # If you have make installed
+   make setup
+
+   # Otherwise
    pip install -e ".[dev]"
+   pre-commit install
 ```
 
 5. Open the desired notebook in `notebooks/` and run it top to bottom.

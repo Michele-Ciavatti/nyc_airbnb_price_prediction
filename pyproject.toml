@@ -29,9 +29,10 @@ dev = [
     "mkdocs-material",
     "mkdocstrings[python]",
     "ruff",
-    "black",
     "pytest",
     "pytest-cov",
+    "pre-commit",
+    "detect-secrets",
 ]
 
 [tool.setuptools.packages.find]
