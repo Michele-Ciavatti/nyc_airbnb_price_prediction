@@ -42,3 +42,34 @@
 ```
 
 5. Open the desired notebook in `notebooks/` and run it top to bottom.
+
+## Project structure
+
+```text
+nyc_airbnb_price_prediction/
+├── data/  
+    ├── external
+    ├── interim
+    ├── processed
+    ├── raw  
+├── docs/                    # MkDocs documentation sources
+│   ├── api.md  
+│   └── index.md  
+├── notebooks/               # Analysis notebooks, run in order
+│   ├── 01_eda.ipynb         # Exploratory data analysis
+│   └── 02_modeling.ipynb    # Model training and evaluation
+├── src/                     # Reusable project code, imported by the notebooks
+│   ├── __init__.py
+│   ├── dataset.py           # Dataset download (kagglehub) and loading
+│   └── plots.py             # Plotting helpers
+├── .env.example             # Template for Kaggle credentials (copy to .env, never commit .env)
+├── .gitattributes  
+├── .gitignore  
+├── .pre-commit-config.yaml  # Pre-commit hooks (ruff, detect-secrets, nbstripout, ...)
+├── .secrets.baseline        # detect-secrets baseline of known/accepted findings
+├── LICENSE  
+├── README.md  
+├── mkdocs.yml               # MkDocs configuration
+├── pyproject.toml           # Package metadata, dependencies and tool configuration
+└── tasks.py                 # Invoke tasks (setup, lint, test, docs, ...); see `invoke --list`
+```
