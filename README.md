@@ -33,8 +33,8 @@
 4. Install the project and its dependencies:
 
 ```bash
-   # If you have make installed
-   make setup
+   # If you have invoke installed (run invoke --list to see all commands)
+   invoke setup
 
    # Otherwise
    pip install -e ".[dev]"

@@ -37,6 +37,8 @@ dev = [
     "pre-commit",
     "detect-secrets",
     "nbstripout",
+    "typos",
+    "invoke",
 ]
 
 [tool.mypy]
