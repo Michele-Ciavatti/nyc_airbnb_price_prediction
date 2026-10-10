@@ -19,12 +19,12 @@ data: ## Download the dataset from Kaggle
 	$(PYTHON) src/retrieve_data.py
 
 lint: ## Run code formatting checks and linting
-	ruff check src/ tests/ scripts/
-	ruff format --check src/ tests/ scripts/
+	ruff check src/ tests/ scripts/ notebooks/
+	ruff format --check src/ tests/ scripts/ notebooks/
 
 format: ## Automatically format code using ruff
-	ruff check --fix src/ tests/ scripts/
-	ruff format src/ tests/ scripts/
+	ruff check --fix src/ tests/ scripts/ notebooks/
+	ruff format src/ tests/ scripts/ notebooks/
 
 test: ## Run unit tests with pytest
 	pytest --cov=src tests/

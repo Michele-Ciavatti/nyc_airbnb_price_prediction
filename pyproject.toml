@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +9,7 @@ description = "NYC Airbnb price prediction"
 authors = [
   { name = "Michele Ciavatti", email = "micheleciavatti@outlook.it" },
 ]
-license = { file = "LICENSE" }
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -22,6 +22,9 @@ dependencies = [
     "python-dotenv",
 ]
 
+[project.urls]
+Repository = "https://github.com/Michele-Ciavatti/nyc_airbnb_price_prediction"
+
 [project.optional-dependencies]
 dev = [
     "ipykernel",
@@ -33,8 +36,11 @@ dev = [
     "pytest-cov",
     "pre-commit",
     "detect-secrets",
+    "nbstripout",
 ]
 
+[tool.mypy]
+ignore_missing_imports = true
+
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["src*"]
+where = ["src"]

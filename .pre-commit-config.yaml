@@ -27,5 +27,9 @@ repos:
         # Excludes lockfiles, notebook outputs, or mock test data
         exclude: '(poetry\.lock|uv\.lock|package-lock\.json|\.ipynb)'
 
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
 # install with:       pre-commit install
 # run a check with:   pre-commit run --all-files
