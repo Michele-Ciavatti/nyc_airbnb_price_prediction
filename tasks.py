@@ -95,6 +95,12 @@ def clean(c: Context) -> None:
 
 
 @task
+def tree(c: Context, check: bool = False) -> None:
+    """Regenerate the project tree in the README (--check to only verify)."""
+    c.run(f"{PYTHON} scripts/update_readme_tree.py{' --check' if check else ''}")
+
+
+@task
 def docs_serve(c: Context) -> None:
     """Launch local MkDocs server with live reloading on src/."""
     c.run("mkdocs serve --watch src")

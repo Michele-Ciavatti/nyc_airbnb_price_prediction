@@ -1,6 +1,6 @@
 ## Setup
 
-**Requirements:** Python 3.10+ (developed on 3.12) and a free Kaggle account.
+**Requirements:** Python 3.11+ (developed on 3.12) and a free Kaggle account.
 
 1. Clone the repository and enter the project folder:
 
@@ -45,31 +45,28 @@
 
 ## Project structure
 
+<!-- TREEVIEW START -->
 ```text
 nyc_airbnb_price_prediction/
-├── data/  
-|   ├── external
-|   ├── interim
-|   ├── processed
-|   ├── raw  
 ├── docs/                    # MkDocs documentation sources
-│   ├── api.md  
-│   └── index.md  
+│   ├── api.md
+│   └── index.md
 ├── notebooks/               # Analysis notebooks, run in order
-│   ├── 01_eda.ipynb         # Exploratory data analysis
-│   └── 02_modeling.ipynb    # Model training and evaluation
+│   ├── 01_eda.ipynb
+│   └── 02_modeling.ipynb
 ├── src/                     # Reusable project code, imported by the notebooks
 │   ├── __init__.py
 │   ├── dataset.py           # Dataset download (kagglehub) and loading
 │   └── plots.py             # Plotting helpers
-├── .env.example             # Template for Kaggle credentials (copy to .env, never commit .env)
-├── .gitattributes  
-├── .gitignore  
-├── .pre-commit-config.yaml  # Pre-commit hooks (ruff, detect-secrets, nbstripout, ...)
-├── .secrets.baseline        # detect-secrets baseline of known/accepted findings
-├── LICENSE  
-├── README.md  
-├── mkdocs.yml               # MkDocs configuration
+├── .env.example             # Template for Kaggle credentials (copy to .env)
+├── .gitattributes
+├── .gitignore
+├── .pre-commit-config.yaml
+├── .secrets.baseline        # detect-secrets baseline (accepted findings)
+├── LICENSE
+├── mkdocs.yml
 ├── pyproject.toml           # Package metadata, dependencies and tool configuration
-└── tasks.py                 # Invoke tasks (setup, lint, test, docs, ...); see `invoke --list`
+├── README.md
+└── tasks.py                 # Invoke tasks (see `invoke --list`)
 ```
+<!-- TREEVIEW END -->
